@@ -16,21 +16,34 @@ Ahora, se intenta comprobar si el dominio que queremos registrar existe o no: `t
 
 El resultado de esta operación nos devuelve un error de dirección invalida.
 
-Despues de analizar y buscar información del problema en Internet (GitHub de ENS entre otros), sabemos que el problema resida en que no tenemos sincronizado la red Rinkeby al 100%. Se ha intentado modificar la configuración de la maquina virtual por un disco duro solido (SSD), pero tampoco se ha sido capaz de sincronizar al completo.
+Despues de analizar y buscar información en Internet (GitHub de ENS entre otros), sabemos que el problema reside en que no tenemos sincronizado la red Rinkeby al 100%. Se ha intentado modificar la configuración de la maquina virtual por un disco duro solido (SSD), pero tampoco se ha sido capaz de sincronizar al completo.
 
-Si tuviesemos el nodo completamente sincronizado, el dominio se registraría con el siguiente comando: `testRegistrar.register(web3.sha3("javieruah"), eth.accounts[0], {from: eth.accounts[0]})`.
+Tras varios intentos, se descubrió que el comando de `geth` admite un parámetro que es el `--syncmode` que admite tres posibles valores: "full", "fast" y "light". Con este último, que solo obtiene el estado actual, se ha logrado la sincronización con la red, pudiendo así resolver el ejercicio.
 
-Esto retornaría la dirección y para ver el owner del dominio sería así: `ens.owner(namehash("javieruah.test"))`
+Ahora, se comprueba si el dominio que se quiere registrar está disponible:
+`testRegistrar.expiryTimes(web3.sha3("javieruah"))`
 
-Por otra parte, se ha buscado otra solución, montando una red con `testrpc` en local:
+Para registrarlo, ha sido necesario desbloquear la cuenta con `personal.unlock(...)`
 
 ![Captura 2](screenshots/screen002.png "Captura 2")
 
-Además, se ha clonado el siguiente repositorio que contiene contratos para registrar dominios `.ens`:
+Ya se puede registrar el dominio y comprobar cual es el propietario del mismo. Para ello, ha sido necesario disponer de balance en la cuenta:
+`testRegistrar.register(web3.sha3("javieruah"), eth.accounts[0], {from: eth.accounts[0]})`
 
-[https://github.com/ensdomains/ens](https://github.com/ensdomains/ens)
+![Captura 3](screenshots/screen003.png "Captura 3")
 
-Se ha compilado y migrado el proyecto truffle dentro de la red pero no se ha sido capaz de registrar un dominio `.test`
+Dominio javieruah.test: `0x1d21003680b8b1041c29fc7ee6c627b61a29f7b4742b8ccc109ad556d7c8d11e`
+
+Como se ve en la siguiente captura, la direccion del propietario coincide con la cuenta con que se ha comprado.
+
+![Captura 4](screenshots/screen004.png "Captura 4")
+
+A continuación, se indica la dirección del Resolver utilizado para registrar el dominio: `0xe7410170f87102df0055eb195163a03b7f2bff4a`
+
+Por último, se adjunta una captura de la transacción analizada desde Etherscan:
+[Ver aquí](https://rinkeby.etherscan.io/tx/0x1d21003680b8b1041c29fc7ee6c627b61a29f7b4742b8ccc109ad556d7c8d11e)
+
+![Captura 5](screenshots/screen005.png "Captura 5")
 
 
 ### Autor
