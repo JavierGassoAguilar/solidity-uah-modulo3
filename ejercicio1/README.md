@@ -32,15 +32,17 @@ Ya se puede registrar el dominio y comprobar cual es el propietario del mismo. P
 
 ![Captura 3](screenshots/screen003.png "Captura 3")
 
-Dominio javieruah.test: `0x1d21003680b8b1041c29fc7ee6c627b61a29f7b4742b8ccc109ad556d7c8d11e`
-
 Como se ve en la siguiente captura, la direccion del propietario coincide con la cuenta con que se ha comprado.
 
 ![Captura 4](screenshots/screen004.png "Captura 4")
 
-A continuación, se indica la dirección del Resolver utilizado para registrar el dominio: `0xe7410170f87102df0055eb195163a03b7f2bff4a`
+A continuación, se indica la dirección del Resolver utilizado para registrar el dominio: `0x5d20cf83cb385e06d2f2a892f9322cd4933eacdc`. Se ha obtenido con el comando `ens.resolver(namehash("javieruah.test")`
 
-Por último, se adjunta una captura de la transacción analizada desde Etherscan:
+Además, una vez registrado el dominio, se asocia a la cuenta deseada:
+
+![Captura 6](screenshots/screen006.png "Captura 6")
+
+Por último, se adjunta una captura de la transacción del registro analizada desde Etherscan:
 [Ver aquí](https://rinkeby.etherscan.io/tx/0x1d21003680b8b1041c29fc7ee6c627b61a29f7b4742b8ccc109ad556d7c8d11e)
 
 ![Captura 5](screenshots/screen005.png "Captura 5")
