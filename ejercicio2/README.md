@@ -24,7 +24,7 @@ A continuación, se levanta la daemon de IPFS:
 ![Captura 2](screens/screen002.png "Captura 2")
 
 
-Se suben los recursos necesarios a IPFS de forma recursiva, estos son las carpetas `build/` y `src/` del proyecto que contiene los ficheros web y la información de los contratos desplegados en Rinkeby:
+Se suben los recursos necesarios a IPFS de forma recursiva del proyecto que contiene los ficheros web y la información de los contratos desplegados en Rinkeby:
 
 ![Captura 3](screens/screen003.png "Captura 3")
 
@@ -33,9 +33,11 @@ Se hace un pin recursivo para que los recursos se mantengan (aunque no es garant
 ![Captura 4](screens/screen004.png "Captura 4")
 
 Por último, en el siguiente enlace se accede a los recursos subidos a IPFS:
-- https://gateway.ipfs.io/ipfs/QmdrANrBiMG259hNcBtTRnEvdty7QtT7ysZZ8VMbuzVDfX/
+- https://gateway.ipfs.io/ipfs/QmPvPKq1KkR6FxinVgE5Aydb2TeAZk4hDV1ytBmFFUMz2T/
 
 ![Captura 5](screens/screen005.png "Captura 5")
+
+Dirección Rinkeby utilizada para adoptar: `0x524c96433f2809727535040674039b84fA8B9A44`
 
 ### Autor
 - Javier Gasso
