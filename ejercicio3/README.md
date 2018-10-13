@@ -35,6 +35,7 @@ La URL final de la DApp es: `http://localhost:8500/bzz:/javieruah.test/index.htm
 
 ![Captura 6](screens/screen006.png "Captura 6")
 
+Dirección Rinkeby utilizada para adoptar: `0x524c96433f2809727535040674039b84fA8B9A44`
 
 ### Autor
 - Javier Gasso
